@@ -1,136 +1,142 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Restaurante El Bizarro — Menú</title>
-  <style>
-    :root{
-      --bg:#000;
-      --muted:#9a9a9a;
-      --accent:#ffd166;
-      --card:#0f0f0f;
-      --text:#fff;
-      --gap:14px;
-      font-family: system-ui, -apple-system, "Helvetica Neue", Arial;
-    }
-    html,body{height:100%;margin:0;background:var(--bg);color:var(--text)}
-    .wrap{
-      max-width:900px;
-      margin:0 auto;
-      padding:18px;
-      box-sizing:border-box;
-    }
-    header{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      margin-bottom:14px;
-    }
-    /*
-    .logo {
-      width:56px;
-      height:56px;
-      border-radius:10px;
-      background:linear-gradient(135deg,#111 0%,#222 100%);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      font-size:14px;
-      color:var(--accent);
-      box-shadow:0 2px 8px rgba(0,0,0,0.6);
-      flex-shrink:0;
-    }
-    */  
-    h1{
-      font-size:24px;
-       margin:0
-    }
-    .sub{
-      size:16px;
-      color:var(--muted);
-      margin-top:4px}
-    section.menu-section{
-      font-size:20px;
-      margin-top:var(--gap);
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:12px;
-      padding:12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
-    }
-    .item{
-      font-size:18px;
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      padding:10px 6px;
-      border-radius:8px;
-      align-items:flex-start;
-    }
-    .price{white-space:nowrap;font-weight:600;font-size:18px;color:var(--accent);margin-left:8px}
-    details{
-      background:transparent;
-      border-radius:10px;
-      padding:6px;
-    }
-    summary{
-      font-size:22px;
-      list-style:none;
-      cursor:pointer;
-      outline:none;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:8px;
-      padding:6px 4px;
-      color:var(--accent);
-      font-weight:600;
-    }
-    summary::-webkit-details-marker{display:none}
-    .chev{
-      transform:rotate(0deg);
-      transition:transform .18s ease;
-      font-size:18px;
-      color:var(--muted);
-    }
-    details[open] .chev{transform:rotate(90deg); color:var(--text)}
-    footer{
-      margin:18px 0 40px 0;
-      color:var(--muted);
-      font-size:10px;
-      text-align:center;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>El Restaurante Bizarro</title>
+
+<style>
+  :root{
+    --bg:#000000;
+    --card:#141414;
+    --accent:#ffffff;
+    --muted:#bbbbbb;
+    --text:#ffffff;
+  }
+
+  body{
+    margin:0;
+    padding:20px;
+    background:var(--bg);
+    color:var(--text);
+    font-family:system-ui, Arial, sans-serif;
+    text-align:center;
+  }
+
+  /* LOGO */
+  .logo img{
+    width:50vw;        /* 50% del ancho de pantalla */
+    max-width:300px;   /* límite opcional */
+    height:auto;
+    display:block;
+    margin:0 auto 20px auto;
+  }
+
+  /* QR */
+  .qr img{
+    width:40vw;
+    max-width:250px;
+    height:auto;
+    display:block;
+    margin:10px auto 25px auto;
+  }
+
+  h1{
+    font-size:24px;
+    margin:0;
+  }
+
+  .sub{
+    font-size:13px;
+    color:var(--muted);
+    margin-top:4px;
+    line-height:1.4;
+  }
+
+  /* SECCIONES */
+  details{
+    background:var(--card);
+    padding:10px 14px;
+    border-radius:10px;
+    margin-top:14px;
+  }
+
+  summary{
+    font-size:18px;
+    cursor:pointer;
+    list-style:none;
+    outline:none;
+  }
+
+  summary::-webkit-details-marker{
+    display:none;
+  }
+
+  details[open]{
+    background:#111;
+    transition:background .2s;
+  }
+
+  .item{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 6px;
+    margin-bottom:6px;
+    border-bottom:1px solid #222;
+  }
+
+  .item:last-child{
+    border-bottom:none;
+  }
+
+  .item .name{
+    font-size:18px;
+    text-align:left;
+  }
+
+  .price{
+    font-size:18px;
+    font-weight:600;
+    color:var(--accent);
+    margin-left:10px;
+  }
+  .footer{
+    background-color: #333; /* Fondo oscuro */
+    color: white;           /* Texto blanco */
+    text-align: center;     /* Centrar texto */
+    padding: 15px 0;        /* Espaciado arriba y abajo */
+    position: fixed;        /* Fijo en la parte inferior */
+    bottom: 0;
+    width: 100%;
+    font-size: 10px;
     }
 
-    img {
-      max-width:99%; /* La imagen ocupará como maximo el 99% de la pantalla */
-      Height: auto; /* Mantiene la proporcion otriginal */
-      display: block; /* Evita espacios debajo de la imagen */
-      margin: 0; /* Centra la imagen horizontalmente */
-    
-    
-}
+</style>
 
-
-  </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo">
-        <img src="logo Bizarro Blanco.png" alt=""Logo">
-      <div>
-        <h1>Restaurante El Bizarro</h1>
-        <div class="sub">Dirigido por Carlos Pinto, se distingue por la calidad de sus platos, la
+
+<!-- LOGO -->
+<div class="logo">
+  <img src="logo Bizarro Blanco.png" alt="Logo">
+</div>
+
+<!-- QR -->
+<div class="qr">
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https://jaygrid.github.io/Menu-Bizarro/" alt="Código QR del menú">
+</div>
+
+<h1>El Restaurante Bizarro</h1>
+<div class="sub">Restaurante El Bizarro, dirigido por Carlos Pinto, se distingue por la calidad de sus platos, la
 innovación gastronómica y una buena carta de vinos. Posee dos salones con ambientes
 diferenciados, además de una de las mejores terrazas de Badajoz, en una zona peatonal
 donde se puede pasear con tranquilidad, además de aparcamiento garantizado.</div>
-      </div>
-    </header>
 
-    <!-- TAPAS -->
-    <details class="menu-section"><summary>Tapas <span class="chev">▶</span></summary>
-      <div class="item"><div class="name">Ensaladilla de gamba y pulpo al ajillo</div><div class="price">8€</div></div>
+<!-- TAPAS -->
+<details>
+  <summary>Tapas</summary>
+   <div class="item"><div class="name">Ensaladilla de gamba y pulpo al ajillo</div><div class="price">8€</div></div>
       <div class="item"><div class="name">Taco de Tartar de Atún con pico de gallo y Mayonesa de Wasabi (2 unid)</div><div class="price">13€</div></div>
       <div class="item"><div class="name">Tosta de Anchoas y Tomate (2 unid)</div><div class="price">7€</div></div>
       <div class="item"><div class="name">Tosta de Sardina Ahumada sobre Tartar de Tomate (2 unid)</div><div class="price">6€</div></div>
@@ -141,91 +147,124 @@ donde se puede pasear con tranquilidad, además de aparcamiento garantizado.</di
       <div class="item"><div class="name">Pan Bao con Pollo al Curry y Cebolla Morada</div><div class="price">11€</div></div>
       <div class="item"><div class="name">Lingote de Brioche con Carrillera, Mayonesa de Kimchi y Parmesano</div><div class="price">11€</div></div>
       <div class="item"><div class="name">Creps de Zapateira, Centollo y salsa de Marisco</div><div class="price">12,50€</div></div>
-    </details>
+</details>
 
-    <!-- ENTRANTES FRÍOS -->
-    <details class="menu-section"><summary>Entrantes Fríos <span class="chev">▶</span></summary>
-      <div class="item"><div class="name">Ensaladilla gambas y Pulpo al ajillo</div><div class="price">15€</div></div>
+<!-- ENTRANTES FRÍOS -->
+<details>
+  <summary>Entrantes fríos</summary>
+ <div class="item"><div class="name">Ensaladilla gambas y Pulpo al ajillo</div><div class="price">15€</div></div>
       <div class="item"><div class="name">Carpaccio de Gambas y Guacamole</div><div class="price">17€</div></div>
       <div class="item"><div class="name">Anchoas sobre Tosta y Tomate — 4 unid</div><div class="price">12€</div></div>
       <div class="item"><div class="name">Anchoas sobre Tosta y Tomate — 8 unid</div><div class="price">22€</div></div>
       <div class="item"><div class="name">Tartar de Atún Rojo con Guacamole</div><div class="price">25€</div></div>
       <div class="item"><div class="name">Carpaccio de Ventresca de Atún rojo</div><div class="price">22€</div></div>
-      <div class="item"><div class="name">Medallón de Foie con Mermelada de Naranja Amarga</div><div class="price">20€</div></div>
-      <div class="item"><div class="name">Tabla de quesos variados</div><div class="price">M14€ / E22€</div></div>
-      <div class="item"><div class="name">Jamón Bellota 100%</div><div class="price">M12€ / E22€</div></div>
-      <div class="item"><div class="name">Lomo Doblado Bellota</div><div class="price">M12€ / E22€</div></div>
+      <div class="item"><div class="name">Medallón de Foie con Mermelada de Naranja Amarga, Cebolla Caramelizada y
+Frutos Rojos </div><div class="price">20€</div></div>
+      <div class="item"><div class="name">Tabla de quesos (6 tipos variados)</div><div class="price">M14€ / E22€</div></div>
+      <div class="item"><div class="name">Jamón Bellota 100% (Montesano)</div><div class="price">M12€ / E22€</div></div>
+      <div class="item"><div class="name">Lomo Doblado Bellota(Señorío de
+Montanera) 100% </div><div class="price">M12€ / E22€</div></div>
       <div class="item"><div class="name">Queso Payoyo D.O.</div><div class="price">M12€ / E22€</div></div>
       <div class="item"><div class="name">Queso Ocaña en Manteca</div><div class="price">M12€ / E22€</div></div>
       <div class="item"><div class="name">Cremosito Torta de Tierra de Barros</div><div class="price">15€</div></div>
-    </details>
+</details>
 
-    <!-- ENSALADAS -->
-    <details class="menu-section"><summary>Ensaladas <span class="chev">▶</span></summary>
-      <div class="item"><div class="name">Ensalada de Brotes, Rulo de Cabra, Gambón...</div><div class="price">13€</div></div>
-      <div class="item"><div class="name">Ensalada de Perdiz Escabechada</div><div class="price">13€</div></div>
-      <div class="item"><div class="name">Ensalada de Burrata, Cherrys y pesto</div><div class="price">13€</div></div>
-    </details>
+<!-- ENSALADAS -->
+<details>
+  <summary>Ensaladas</summary>
+  <div class="item"><div class="name">Ensalada de Brotes, Rulo de Cabra, Gambón,
+Cebolla caramelizada, vinagreta de pipas y
+pasas</div><div class="price">9€</div></div>
+  <div class="item"><div class="name"> Ensalada de Perdiz Escabechada con Huevo
+de Codorniz</div><div class="price">10€</div></div>
+  <div class="item"><div class="name">Ensalada de Burrata, Cherrys y pesto de
+Albahaca</div><div class="price">12€</div></div>
+</details>
 
-    <!-- ENTRANTES CALIENTES -->
-    <details class="menu-section"><summary>Entrantes Calientes <span class="chev">▶</span></summary>
-      <div class="item"><div class="name">Wok de Verduritas</div><div class="price">15€</div></div>
+<!-- ENTRANTES CALIENTES -->
+<details>
+  <summary>Entrantes calientes</summary>
+  <div class="item"><div class="name">Wok de Verduritas, Fideos de arroz y alga
+Wuakame </div><div class="price">15€</div></div>
       <div class="item"><div class="name">Bacalao Dorado</div><div class="price">M10€ / E14€</div></div>
-      <div class="item"><div class="name">Variado de Croquetas (8 unid)</div><div class="price">14€</div></div>
+      <div class="item"><div class="name">Variado de Croquetas (Jamón, bacalao,
+chipirón en su tinta) (8 unid)</div><div class="price">14€</div></div>
       <div class="item"><div class="name">Torreznos de Soria</div><div class="price">15€</div></div>
-      <div class="item"><div class="name">Boletus con Huevo Poché, Medallon de Foie fresco y Mermelada de Tomate</div><div class="price">18€</div></div>
-      <div class="item"><div class="name">Tartar de Atún Rojo, Base de crujiente de arroz, huevo frito y guacamole</div><div class="price">22€</div></div>
-    </details>
+      <div class="item"><div class="name">Boletus con Huevo Poché, Medallón de
+Foie fresco y mermelada de tomate</div><div class="price">18€</div></div>
+      <div class="item"><div class="name">Tartar de Atún Rojo, Base de crujiente de
+arroz, huevos fritos y guacamole</div><div class="price">22€</div></div>
+</details>
 
-    <!-- DEL MAR -->
-    <details class="menu-section"><summary>Del Mar <span class="chev">▶</span></summary>
-      <div class="item"><div class="name">Boquerones fritos</div><div class="price">13€</div></div>
+<!-- DEL MAR -->
+<details>
+  <summary>Del Mar</summary>
+  <div class="item"><div class="name">Boquerones fritos</div><div class="price">13€</div></div>
       <div class="item"><div class="name">Choco Frito</div><div class="price">13,50€</div></div>
-      <div class="item"><div class="name">Pulpo a la Brasa con Patata Rota y Pimentón</div><div class="price">21€</div></div>
+      <div class="item"><div class="name"> Pulpo a la Brasa con Patata Rota y Pimentón</div><div class="price">21€</div></div>
       <div class="item"><div class="name">Gamba Blanca Cocida</div><div class="price">20€</div></div>
       <div class="item"><div class="name">Brocheta de Rape, Choco y Gambón</div><div class="price">18€</div></div>
-      <div class="item"><div class="name">Lomo de Bacalao extra, ajo frito y verduritas</div><div class="price">19€</div></div>
-      <div class="item"><div class="name">Cazuela de Gambón y pulupo al ajillo</div><div class="price">21€</div></div>
+      <div class="item"><div class="name"> Lomo de Bacalao extra, ajo, frito y verduritas</div><div class="price">19€</div></div>
+      <div class="item"><div class="name">Cazuela de Gambón y pulpo al ajillo</div><div class="price">21€</div></div>
       <div class="item"><div class="name">Lomo de Atún Rojo</div><div class="price">25€</div></div>
       <div class="item"><div class="name">Mejillones en vinagreta</div><div class="price">13€</div></div>
-    </details>
+</details>
 
-    <!-- CARNES -->
-    <details class="menu-section"><summary>Carnes <span class="chev">▶</span></summary>
-      <div class="item"><div class="name">Hamburguesa gourmet (300g de carne de buey madurada, crema camembert, queso cheddar, cebolla caramelizada y chips de patatas fritas</div><div class="price">15€</div></div>
+<!-- CARNES -->
+<details>
+  <summary>Carnes</summary>
+   <div class="item"><div class="name">Hamburguesa gourmet (300g de carne de
+buey madurada, crema camembert, queso cheddar, cebolla caramelizada y chips de patatas fritas</div><div class="price">15€</div></div>
       <div class="item"><div class="name">Solomillo Laminado</div><div class="price">15€</div></div>
-      <div class="item"><div class="name">Secreto ibérico a la parrilla</div><div class="price">15€</div></div>
-      <div class="item"><div class="name">Presa ibérica</div><div class="price">18€</div></div>
-      <div class="item"><div class="name">Lomo Bajo 400g</div><div class="price">27€</div></div>
-      <div class="item"><div class="name">Lomo Alto 1Kg</div><div class="price">52€</div></div>
-      <div class="item"><div class="name">Medallón de Solomillo de Vaca Madurada 300 gr. Foie con reducción de Px</div><div class="price">27€</div></div>
-      <div class="item"><div class="name">Tabla de carne a la brasa (Entrecot de Añojo, Presa, Secreto y Solomillo)</div><div class="price">50€</div></div>
-    </details>
+      <div class="item"><div class="name"> Secreto ibérico a la Parrilla </div><div class="price">15€</div></div>
+      <div class="item"><div class="name">Presa ibérica a la Parrilla </div><div class="price">18€</div></div>
+      <div class="item"><div class="name">Lomo Bajo de Vaca Madurada 400gr.</div><div class="price">27€</div></div>
+      <div class="item"><div class="name">Lomo Alto con hueso Vaca Madurada 1Kg</div><div class="price">52€</div></div>
+      <div class="item"><div class="name">Medallón de Solomillo de Vaca Madurada 300 gr. Foie con reducción de Px </div><div class="price">27€</div></div>
+      <div class="item"><div class="name">Tabla de carne a la brasa (Entrecot de Añojo, Presa, Secreto y Solomillo) </div><div class="price">50€</div></div>
+</details>
 
-    <!-- ASADOS -->
-    <details class="menu-section"><summary>Asados <span class="chev">▶</span></summary>
-      <div class="item"><div class="name">Codillo Asado al horno</div><div class="price">20€</div></div>
-      <div class="item"><div class="name">Pierna Cochinillo asada</div><div class="price">21€</div></div>
+<!-- ASADOS -->
+<details>
+  <summary>Asados</summary>
+      <div class="item"><div class="name">Codillo Asado</div><div class="price">20€</div></div>
+      <div class="item"><div class="name">Pierna Cochinillo</div><div class="price">21€</div></div>
       <div class="item"><div class="name">Pierna Cordero Lechal</div><div class="price">21€</div></div>
-      <div class="item"><div class="name">Salsa para carne  Torta</div>
-    </details>
+      <div class="item"><div class="name">Salsa para Carne</div><div class="price">Torta</div></div>
+</details>
 
-    <!-- POSTRES -->
-    <details class="menu-section"><summary>Postres <span class="chev">▶</span></summary>
-      <div class="item"><div class="name">Tortitas con Nutela, Helado de Kinder, Cookies Oreo y Sirope de Kinder</div><div class="price">8€</div></div>
-      <div class="item"><div class="name">Tarta de queso al horno (sin gluten)</div><div class="price">6€</div></div>
-      <div class="item"><div class="name">Torrija de Pan brioche y Helado de Vainilla</div><div class="price">6€</div></div>
-      <div class="item"><div class="name">Leche Frita (sin gluten, sin lactosa)</div><div class="price">6€</div></div>
+<!-- Infantil -->
+<details>
+  <summary>Infantil</summary>
+      <div class="item"><div class="name">Nugget de Pollo con Patatas</div><div class="price">6€</div></div>
+</details>
+
+<!-- POSTRES -->
+<details>
+  <summary>Postres</summary>
+ <div class="item"><div class="name">Tortitas con Nutela, Helado de Kinder, Cookies
+Oreo y Sirope de Kinder</div><div class="price">8€</div></div>
+      <div class="item"><div class="name">Tarta de queso al horno (sin gluten) </div><div class="price">6€</div></div>
+      <div class="item"><div class="name"> Torrija de Pan brioche y Helado de Vainilla</div><div class="price">6€</div></div>
+      <div class="item"><div class="name">Leche Frita (sin gluten, sin lactosa) </div><div class="price">6€</div></div>
       <div class="item"><div class="name">Brownie de chocolate con helado de vainilla (sin gluten)</div><div class="price">6€</div></div>
-      <div class="item"><div class="name">Tulipa de helado de Turrón</div><div class="price">6€</div></div>
+      <div class="item"><div class="name">Tulipa de helado de Turron</div><div class="price">6€</div></div>
       <div class="item"><div class="name">Limón helado</div><div class="price">5,50€</div></div>
-    </details>
+</details>
 
+<!-- Pan -->
+<details>
+  <summary>Pan</summary>
+ <div class="item"><div class="name">Cesto de Pan</div><div class="price">1€</div></div>
+ <div class="item"><div class="name">Cesto de Pan sin gluten</div><div class="price">1€</div></div>
+
+</details>
+<footer> 
     <footer>Consulte la lista de alérgenos a nuestro personal</footer>
     <footer>Dirección: C. Arrayanes, 2, 06010 Badajoz</footer>
     <footer>Teléfono: 924 22 25 03</footer>
     <footer> </footer>
     <footer>Octubre 2025</footer>
-  </div>
+</footer>
 </body>
 </html>
